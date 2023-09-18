@@ -28,12 +28,12 @@ public class FileStore {
     }
 	
 	//per cancellare
-	public static void removeImg(String folderName, String name) {
-        Path fileNameAndPath  = Paths.get(uploadDirectory+folderName,name);
-        try {
-            Files.delete(fileNameAndPath);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//	public static void removeImg(String folderName, String name) {
+//        Path fileNameAndPath  = Paths.get(uploadDirectory+folderName,name);
+//        try {
+//            Files.delete(fileNameAndPath);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
