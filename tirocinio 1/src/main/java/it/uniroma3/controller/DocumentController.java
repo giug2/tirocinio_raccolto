@@ -62,4 +62,12 @@ public class DocumentController {
 		model.addAttribute("docs", this.documentService.findAll());
 		return "elencoDocumenti";
 	}
+	
+	/* ===== DOC ===== */
+	@GetMapping(value="/doc/elem/{id}")
+	public String getElem(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("elem", this.documentService.findById(id).getElem());
+		return "elemento";
+	}
+	
 }

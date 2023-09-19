@@ -16,8 +16,8 @@ public class Document {
     private Long id;
     @NotBlank
     private String nome;
-    private String estensione;
     private String descrizione;
+    private String estensione;
     private String elem;
 
     
@@ -40,19 +40,11 @@ public class Document {
 		this.nome = nome;
 	}
 	
-	public String getEstensione() {
-		return estensione;
-	}
-	
-	public void setEstensione(String estensione) {
-		this.estensione = estensione;
-	}
-	
 	public String getDescrizione() {
 		return descrizione;
 	}
 	
-	public void setDesrizione(String descrizione) {
+	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
 
@@ -62,5 +54,13 @@ public class Document {
 
 	public void setElem(String elem) {
 		this.elem = elem;
+	}
+
+	public String getEstensione() {
+		return estensione;
+	}
+
+	public void setEstensione(String estensione) {
+		this.estensione = estensione;
 	}
 }

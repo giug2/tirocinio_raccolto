@@ -12,6 +12,6 @@ public interface DocumentRepository extends CrudRepository<Document, Long> {
 
 	boolean existsByNome(String name);
 	
-	List<Document> findByEstensione(String estensione);
+//	List<Document> findByEstensione(String estensione);
 
 }

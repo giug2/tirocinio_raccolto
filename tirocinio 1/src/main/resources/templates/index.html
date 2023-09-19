@@ -22,8 +22,8 @@
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Nome</th>
-							<th scope="col">Descrizione</th>
 							<th scope="col">Estensione</th>
+							<th scope="col">Descrizione</th>
 							<th scope="col">Vai a...</th>
 						</tr>
 					</thead>
@@ -31,8 +31,8 @@
 						<tr th:each="doc : ${docs}">
 							<th scope="row" th:text="${doc.id}">1</th>
 							<th th:text="${doc.nome}">Nome</th>
-							<th th:text="${doc.descrizione}">Descrizione</th>
 							<th th:text="${doc.estensione}">Estensione</th>
+							<th th:text="${doc.descrizione}">Descrizione</th>
 							<th>
 								<div th:replace="fragments/layout.html :: modalOperations(oggetto='Documento', 
 								link1='/docs',

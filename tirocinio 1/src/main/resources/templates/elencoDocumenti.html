@@ -17,17 +17,17 @@
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Nome</th>
-							<th scope="col">Descrizione</th>
 							<th scope="col">Estensione</th>
+							<th scope="col">Descrizione</th>
 							<th scope="col">Vai a...</th>
-s						</tr>
+						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="documento : ${docs}">
 							<th scope="row" th:text="${documento.id}">1</th>
 							<th th:text="${documento.nome}">Nome</th>
-							<th th:text="${documento.descrizione}">Descrizione</th>
 							<th th:text="${documento.estensione}">Estensione</th>
+							<th th:text="${documento.descrizione}">Descrizione</th>
 							<th>
 								<a class="btn btn-success" th:href="@{'/doc/' + ${documento.id}}">Documento</a>
 							</th>

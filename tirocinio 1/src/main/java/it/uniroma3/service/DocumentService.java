@@ -23,9 +23,9 @@ public class DocumentService {
 		return documentRepository.findById(id).get();
 	}
 	
-	public List<Document> findByType(String type) {
-		return documentRepository.findByEstensione(type);
-	}
+//	public List<Document> findByType(String type) {
+//		return documentRepository.findByEstensione(type);
+//	}
 
 	@Transactional
 	public void save(Document document) {
