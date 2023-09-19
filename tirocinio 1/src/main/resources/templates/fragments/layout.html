@@ -35,6 +35,9 @@
 									<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
 										<a class="nav-link" th:href="@{/}">Home</a>
 									</li>
+									<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+										<a class="nav-link" th:href="@{/docs}">Elenco Documenti</a>
+									</li>
 								</ul>
 							</div>
 
@@ -50,14 +53,14 @@
 		<!-- 							MODAL OPERAZIONI								  -->
 		<!-- ============================================================================ -->
 
-		<div th:fragment="modalOperations(oggetto, link1, link2, id)">
+		<div th:fragment="modalOperations(oggetto, link1, link2)">
 			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-info" data-toggle="modal" th:data-target="'#modalFor'+${oggetto}+${id}" th:text="${oggetto}">
+			<button type="button" class="btn btn-info" data-toggle="modal" th:data-target="'#modalFor'+${oggetto}" th:text="${oggetto}">
 				
 			</button>
 
 			<!-- Modal -->
-			<div class="modal fade" th:id="'modalFor'+${oggetto}+${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal fade" th:id="'modalFor'+${oggetto}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -68,8 +71,8 @@
 						</div>
 						<div class="modal-body">
 							<div class="row ml-4">
-								<a class="btn btn-info mr-2 mb-2" th:href="@{${link1}}" th:text="'Aggiungi ' + ${oggetto}"></a>
-								<a class="btn btn-info mb-2" th:href="@{${link2}}" th:text="'Visualizza elenco ' + ${oggetto}"></a>   		
+								<a class="btn btn-info mr-2 mb-2" th:href="@{${link1}}" th:text="'Visualizza elenco'"></a>
+								<a class="btn btn-info mb-2" th:href="@{${link2}}" th:text="'Visualizza ' + ${oggetto}"></a>   		
 							</div>
 						</div>
 						<div class="modal-footer">

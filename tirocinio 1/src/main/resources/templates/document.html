@@ -6,7 +6,7 @@
 	
 	<section class="user-background informations-section ">
 		<div class="img-profile-informations" >
-			<img th:src="'/images/document/profili/' + ${doc.img}" alt="Documento">
+			<img th:src="'/images/document/profili/' + ${doc.elem}" alt="Documento">
 		</div>
 	</section>
 
@@ -16,7 +16,7 @@
 			<div class="mb-4">
 				<h2 th:text="'Documento ' + ${doc.nome}"></h2>
 			</div>
-
+			<p th:text="'Estensione: ' + ${doc.estensione}">Estensione</p>
 			<p th:text="'Descrizione: ' + ${doc.descrizione}">Descrizione</p>
 
 			<br>

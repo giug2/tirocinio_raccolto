@@ -2,7 +2,8 @@ package it.uniroma3.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.stereotype.Component;
+
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ import it.uniroma3.service.DocumentService;
 import it.uniroma3.utility.FileStore;
 import jakarta.validation.Valid;
 
-@Component
+@Controller
 public class DocumentController {
 
 	@Autowired
@@ -41,7 +42,7 @@ public class DocumentController {
 						   Model model){
 		this.documentValidator.validate(doc, bindingResult);
 		if (!bindingResult.hasErrors()) {
-			doc.setImg(FileStore.store(file, DIR_FOLDER_IMG));
+			doc.setElem(FileStore.store(file, DIR_FOLDER_IMG));
 			this.documentService.save(doc);
 			return this.getDocs(model);
 		}
@@ -61,5 +62,4 @@ public class DocumentController {
 		model.addAttribute("docs", this.documentService.findAll());
 		return "elencoDocumenti";
 	}
-
 }
