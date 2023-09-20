@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout.html :: headerfiles(title='Gestione file')"></head>
+<body>	
+
+	<section class="hero-anime section-hero">
+		<header th:replace="fragments/layout.html :: navMenu"></header>
+	</section>
+
+	<br>
+	
+	<section class="generic_section">
+		<div class="container">
+			<div class="mb-4">
+				<h2>Elenco Documenti</h2>
+			</div>
+			<a class="btn btn-success btn-lg" th:href="@{/formNewDoc}">Aggiungi Nuovo Documento</a>
+			<br><br>
+			<div class="table-responsive">
+				<table class="table table-striped table-hover">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Nome</th>
+							<th scope="col">Descrizione</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="doc : ${docs}">
+							<th scope="row" th:text="${doc.id}">1</th>
+							<th th:text="${doc.nome}">Nome</th>
+							<th th:text="${doc.descrizione}">Descrizione</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	
+	<br>
+
+
+	<footer th:replace="fragments/layout.html :: fondo"></footer>
+	<div th:replace="fragments/layout.html :: jsFiles"></div>
+</body>
+</html>

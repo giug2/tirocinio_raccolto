@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout.html :: headerfiles(title='Gestione raccolti')"></head>
+<body>	
+
+	<section class="hero-anime section-hero">
+		<header th:replace="fragments/layout.html :: navMenu"></header>
+	</section>
+
+	<br>
+	
+	<section class="generic_section">
+		<div class="container">
+			<div class="mb-4">
+				<h2>Elenco Raccolti</h2>
+			</div>
+			
+			<br>
+			<div class="table-responsive">
+				<table class="table table-striped table-hover">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Crop</th>
+							<th scope="col">Croplabel</th>
+							<th scope="col">Immagine</th>
+							<th scope="col">.</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="crop : ${crops}">
+							<th scope="row" th:text="${crop.id}">1</th>
+							<th th:text="${crop.crop}">Nome</th>
+							<th th:text="${crop.croplabel}">Estensione</th>
+							<th><span><img width="50%" th:src="'/images/' + ${crop.path}"></span></th>
+							<th>
+								<div th:replace="fragments/layout.html :: modalOperations(oggetto='Raccolto', 
+								link1='/crops',
+								link2='/crop/' + ${crop.id})"> </div>
+							</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	<br>
+
+	<footer th:replace="fragments/layout.html :: fondo"></footer>
+	<div th:replace="fragments/layout.html :: jsFiles"></div>
+</body>
+</html>
